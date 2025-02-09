@@ -1,7 +1,5 @@
 <template>
-  <div class="p-2">
-    <Button>
-      Click
-    </Button>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
