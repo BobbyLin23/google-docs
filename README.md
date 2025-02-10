@@ -6,15 +6,34 @@
 - Tailwind CSS
 - Shadcn UI Vue
 - Tiptap
+- Pinia
+- Clerk
+- Prisma
+- Neon
 
 ## Steps
 - [x] Project Setup
 - [x] Add Tiptap Editor
 - [x] Add Tiptap extensions
-- [ ] Editor store
-- [ ] Editor tools
+- [x] Editor store
+- [x] Editor tools
 - [ ] Font family & heading tools
 - [ ] Color tools (text & highlight)
+- [ ] Link and image tools
+- [ ] Align and list tools
+- [ ] Font size tool
+- [ ] Line height tool
+- [ ] Margin ruler
+- [ ] Navigation bar
+- [ ] Search input
+- [ ] Template gallery
+- [ ] DB Setup
+- [ ] Auth
+- [ ] Create and list documents
+- [ ] Update and delete documents
+- [ ] Search documents
+- [ ] Organizations feature
+- [ ] Collaboration setup
 
 ## Description
 

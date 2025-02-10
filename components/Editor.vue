@@ -1,19 +1,20 @@
 <script setup lang="ts">
-import BulletList from '@tiptap/extension-bullet-list'
-import Image from '@tiptap/extension-image'
-import ListItem from '@tiptap/extension-list-item'
+import FontFamily from '@tiptap/extension-font-family'
 import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
 import TaskItem from '@tiptap/extension-task-item'
 import TaskList from '@tiptap/extension-task-list'
+import TextStyle from '@tiptap/extension-text-style'
 import Underline from '@tiptap/extension-underline'
 import StarterKit from '@tiptap/starter-kit'
 import { Editor, EditorContent } from '@tiptap/vue-3'
 import ImageResize from 'tiptap-extension-resize-image'
 
-const { editor, setEditor } = useEditorStore()
+const editorStore = useEditorStore()
+const { setEditor } = editorStore
+const { editor } = storeToRefs(editorStore)
 
 onMounted(() => {
   const newEditor = new Editor({
@@ -48,24 +49,11 @@ onMounted(() => {
       },
     },
     content: `
-        <table>
-          <tbody>
-            <tr>
-              <th>Name</th>
-              <th colspan="3">Description</th>
-            </tr>
-            <tr>
-              <td>Cyndi Lauper</td>
-              <td>Singer</td>
-              <td>Songwriter</td>
-              <td>Actress</td>
-            </tr>
-          </tbody>
-        </table>`,
+      <h2>Try me!</h2>
+      <p>This is a simple editor build with Tiptap.</p>
+    `,
     extensions: [
       StarterKit,
-      BulletList,
-      ListItem,
       TaskItem.configure({
         nested: true,
       }),
@@ -76,16 +64,19 @@ onMounted(() => {
       TableRow,
       TableHeader,
       TableCell,
-      Image,
+      // Image,
       ImageResize,
       Underline,
+      TextStyle,
+      FontFamily,
     ],
   })
   setEditor(newEditor)
 })
 
 onUnmounted(() => {
-  // editor.value?.destroy()
+  editor.value?.destroy()
+  setEditor(null)
 })
 </script>
 
