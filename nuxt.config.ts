@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
+    '@pinia/nuxt',
   ],
   shadcn: {
     prefix: '',
@@ -15,5 +16,16 @@ export default defineNuxtConfig({
   },
   css: [
     '~/assets/css/main.css',
+  ],
+  components: [
+    '~/components',
+    {
+      path: '~/components/ui',
+      pathPrefix: false,
+    },
+    {
+      path: '~/components/editor',
+      pathPrefix: false,
+    },
   ],
 })

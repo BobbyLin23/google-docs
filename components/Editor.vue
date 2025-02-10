@@ -8,14 +8,39 @@ import TableHeader from '@tiptap/extension-table-header'
 import TableRow from '@tiptap/extension-table-row'
 import TaskItem from '@tiptap/extension-task-item'
 import TaskList from '@tiptap/extension-task-list'
+import Underline from '@tiptap/extension-underline'
 import StarterKit from '@tiptap/starter-kit'
 import { Editor, EditorContent } from '@tiptap/vue-3'
 import ImageResize from 'tiptap-extension-resize-image'
 
-const editor = ref<Editor | null>(null)
+const { editor, setEditor } = useEditorStore()
 
 onMounted(() => {
-  editor.value = new Editor({
+  const newEditor = new Editor({
+    onCreate({ editor }) {
+      setEditor(editor as Editor)
+    },
+    onDestroy() {
+      setEditor(null)
+    },
+    onUpdate({ editor }) {
+      setEditor(editor as Editor)
+    },
+    onSelectionUpdate({ editor }) {
+      setEditor(editor as Editor)
+    },
+    onTransaction({ editor }) {
+      setEditor(editor as Editor)
+    },
+    onFocus({ editor }) {
+      setEditor(editor as Editor)
+    },
+    onBlur({ editor }) {
+      setEditor(editor as Editor)
+    },
+    onContentError({ editor }) {
+      setEditor(editor as Editor)
+    },
     editorProps: {
       attributes: {
         style: 'padding-left: 56px; padding-right: 56px;',
@@ -53,12 +78,14 @@ onMounted(() => {
       TableCell,
       Image,
       ImageResize,
+      Underline,
     ],
   })
+  setEditor(newEditor)
 })
 
 onUnmounted(() => {
-  editor.value?.destroy()
+  // editor.value?.destroy()
 })
 </script>
 

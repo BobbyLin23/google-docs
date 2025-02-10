@@ -10,12 +10,11 @@
 ## Steps
 - [x] Project Setup
 - [x] Add Tiptap Editor
-- [ ] Add Tiptap extensions
+- [x] Add Tiptap extensions
 - [ ] Editor store
 - [ ] Editor tools
 - [ ] Font family & heading tools
 - [ ] Color tools (text & highlight)
-
 
 ## Description
 
