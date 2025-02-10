@@ -12,8 +12,10 @@
   "dependencies": {
     "@pinia/nuxt": "0.9.0",
     "@tiptap/extension-bullet-list": "^2.11.5",
+    "@tiptap/extension-color": "^2.11.5",
     "@tiptap/extension-font-family": "^2.11.4",
     "@tiptap/extension-heading": "^2.11.5",
+    "@tiptap/extension-highlight": "^2.11.5",
     "@tiptap/extension-image": "^2.11.5",
     "@tiptap/extension-list-item": "^2.11.5",
     "@tiptap/extension-table": "^2.11.3",
@@ -38,7 +40,8 @@
     "tailwindcss-animate": "^1.0.7",
     "tiptap-extension-resize-image": "^1.2.1",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "vue3-colorpicker": "^2.3.0"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^4.1.1",

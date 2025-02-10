@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { Color } from '@tiptap/extension-color'
 import FontFamily from '@tiptap/extension-font-family'
+import Highlight from '@tiptap/extension-highlight'
 import Table from '@tiptap/extension-table'
 import TableCell from '@tiptap/extension-table-cell'
 import TableHeader from '@tiptap/extension-table-header'
@@ -64,11 +66,14 @@ onMounted(() => {
       TableRow,
       TableHeader,
       TableCell,
-      // Image,
       ImageResize,
       Underline,
       TextStyle,
       FontFamily,
+      Color,
+      Highlight.configure({
+        multicolor: true,
+      }),
     ],
   })
   setEditor(newEditor)
