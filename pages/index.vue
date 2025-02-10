@@ -4,6 +4,11 @@
 
 <template>
   <div>
-    Hello
+    Doc
+    <NuxtLink href="/documents/a">
+      <Button>
+        Started
+      </Button>
+    </NuxtLink>
   </div>
 </template>

@@ -10,4 +10,10 @@ export default defineNuxtConfig({
     prefix: '',
     componentDir: './components/ui',
   },
+  devServer: {
+    port: 3019,
+  },
+  css: [
+    '~/assets/css/main.css',
+  ],
 })

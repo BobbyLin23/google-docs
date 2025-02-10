@@ -6,6 +6,15 @@
       "dependencies": {
         "@nuxtjs/color-mode": "3.5.2",
         "@nuxtjs/tailwindcss": "6.13.1",
+        "@tiptap/extension-bullet-list": "^2.11.5",
+        "@tiptap/extension-image": "^2.11.5",
+        "@tiptap/extension-list-item": "^2.11.5",
+        "@tiptap/extension-table": "^2.11.3",
+        "@tiptap/extension-table-cell": "^2.11.3",
+        "@tiptap/extension-table-header": "^2.11.3",
+        "@tiptap/extension-table-row": "^2.11.5",
+        "@tiptap/extension-task-item": "^2.11.5",
+        "@tiptap/extension-task-list": "^2.11.5",
         "@tiptap/pm": "^2.11.5",
         "@tiptap/starter-kit": "^2.11.5",
         "@tiptap/vue-3": "^2.11.5",
@@ -17,6 +26,7 @@
         "shadcn-nuxt": "0.11.3",
         "tailwind-merge": "^3.0.1",
         "tailwindcss-animate": "^1.0.7",
+        "tiptap-extension-resize-image": "^1.2.1",
         "vue": "latest",
         "vue-router": "latest",
       },
@@ -403,6 +413,8 @@
 
     "@tiptap/extension-horizontal-rule": ["@tiptap/extension-horizontal-rule@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-horizontal-rule/-/extension-horizontal-rule-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0", "@tiptap/pm": "^2.7.0" } }, "sha512-3up2r1Du8/5/4ZYzTC0DjTwhgPI3dn8jhOCLu73m5F3OGvK/9whcXoeWoX103hYMnGDxBlfOje71yQuN35FL4A=="],
 
+    "@tiptap/extension-image": ["@tiptap/extension-image@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-image/-/extension-image-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-HbUq9AL8gb8eSuQfY/QKkvMc66ZFN/b6jvQAILGArNOgalUfGizoC6baKTJShaExMSPjBZlaAHtJiQKPaGRHaA=="],
+
     "@tiptap/extension-italic": ["@tiptap/extension-italic@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-italic/-/extension-italic-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-9VGfb2/LfPhQ6TjzDwuYLRvw0A6VGbaIp3F+5Mql8XVdTBHb2+rhELbyhNGiGVR78CaB/EiKb6dO9xu/tBWSYA=="],
 
     "@tiptap/extension-list-item": ["@tiptap/extension-list-item@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-list-item/-/extension-list-item-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-Mp5RD/pbkfW1vdc6xMVxXYcta73FOwLmblQlFNn/l/E5/X1DUSA4iGhgDDH4EWO3swbs03x2f7Zka/Xoj3+WLg=="],
@@ -412,6 +424,18 @@
     "@tiptap/extension-paragraph": ["@tiptap/extension-paragraph@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-paragraph/-/extension-paragraph-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-YFBWeg7xu/sBnsDIF/+nh9Arf7R0h07VZMd0id5Ydd2Qe3c1uIZwXxeINVtH0SZozuPIQFAT8ICe9M0RxmE+TA=="],
 
     "@tiptap/extension-strike": ["@tiptap/extension-strike@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-strike/-/extension-strike-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-PVfUiCqrjvsLpbIoVlegSY8RlkR64F1Rr2RYmiybQfGbg+AkSZXDeO0eIrc03//4gua7D9DfIozHmAKv1KN3ow=="],
+
+    "@tiptap/extension-table": ["@tiptap/extension-table@2.11.3", "https://registry.npmmirror.com/@tiptap/extension-table/-/extension-table-2.11.3.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0", "@tiptap/pm": "^2.7.0" } }, "sha512-yxtEXhWB3804Uzr1YEpA4eynBD2syJr0UXfaJmPiz2dVxDF0FtB4K/1OWzTWF1CUBdbQmGKmAQYXDzHOyecfDw=="],
+
+    "@tiptap/extension-table-cell": ["@tiptap/extension-table-cell@2.11.3", "https://registry.npmmirror.com/@tiptap/extension-table-cell/-/extension-table-cell-2.11.3.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-evdzllWjBey8bzSR7sUxTdrHKjN6M3XOv+1XfaoQpqMr8ryRWDb6yPSEIssAjc8bIa7yvCl7jaXMreeXE7oBSQ=="],
+
+    "@tiptap/extension-table-header": ["@tiptap/extension-table-header@2.11.3", "https://registry.npmmirror.com/@tiptap/extension-table-header/-/extension-table-header-2.11.3.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-Dcs7R0r5VDhuRvEfLhUKFvK9Yj2xPP8aTQ2UvLVCUJMlvo5Qv/xaJWDbXxH/AQ3wL4LvZomHTOWvdNad7WEkgg=="],
+
+    "@tiptap/extension-table-row": ["@tiptap/extension-table-row@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-table-row/-/extension-table-row-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-+/VWhCuW24BcM5aaIc/f0bC6ZR1Q5gnuqw13MIo7gyPx7iIY6BXK8roGiZSs8wYAN4uBEf3EKFm0bSZwQuAeyg=="],
+
+    "@tiptap/extension-task-item": ["@tiptap/extension-task-item@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-task-item/-/extension-task-item-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0", "@tiptap/pm": "^2.7.0" } }, "sha512-Xvvww8cleM6fcNejP916vzhL31yJnAmuBvABsOV0kHGtAqkqUVCSDcN/1qjI4ihVNeIWEJBHDczjDfZzvLy1xA=="],
+
+    "@tiptap/extension-task-list": ["@tiptap/extension-task-list@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-task-list/-/extension-task-list-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-DJpIrBu/bjXYmyYoWQDH2GkpvRmizT9Fvbx5MscFYyfmSsYryD3vRBtCDz08gviwoRII+pFBrG4Ynb0XuQ7DsA=="],
 
     "@tiptap/extension-text": ["@tiptap/extension-text@2.11.5", "https://registry.npmmirror.com/@tiptap/extension-text/-/extension-text-2.11.5.tgz", { "peerDependencies": { "@tiptap/core": "^2.7.0" } }, "sha512-Gq1WwyhFpCbEDrLPIHt5A8aLSlf8bfz4jm417c8F/JyU0J5dtYdmx0RAxjnLw1i7ZHE7LRyqqAoS0sl7JHDNSQ=="],
 
@@ -1764,6 +1788,8 @@
     "tinyglobby": ["tinyglobby@0.2.10", "https://registry.npmmirror.com/tinyglobby/-/tinyglobby-0.2.10.tgz", { "dependencies": { "fdir": "^6.4.2", "picomatch": "^4.0.2" } }, "sha512-Zc+8eJlFMvgatPZTl6A9L/yht8QqdmUNtURHaKZLmKBE12hNPSrqNkUp2cs3M/UKmNVVAMFQYSjYIVHDjW5zew=="],
 
     "tippy.js": ["tippy.js@6.3.7", "https://registry.npmmirror.com/tippy.js/-/tippy.js-6.3.7.tgz", { "dependencies": { "@popperjs/core": "^2.9.0" } }, "sha512-E1d3oP2emgJ9dRQZdf3Kkn0qJgI6ZLpyS5z6ZkY1DF3kaQaBsGZsndEpHwx+eC+tYM41HaSNvNtLx8tU57FzTQ=="],
+
+    "tiptap-extension-resize-image": ["tiptap-extension-resize-image@1.2.1", "https://registry.npmmirror.com/tiptap-extension-resize-image/-/tiptap-extension-resize-image-1.2.1.tgz", { "peerDependencies": { "@tiptap/core": "^2.0.0", "@tiptap/extension-image": "^2.0.0", "@tiptap/pm": "^2.0.0" } }, "sha512-SLMAujDa+0LN/6Iv2HtU4Uk0BL6LMh4b/r85frpdnjFDW2i6pIOfTVG8jzJQ8T1EgYHNn2YG1U2HoVAGuwLc3Q=="],
 
     "to-regex-range": ["to-regex-range@5.0.1", "https://registry.npmmirror.com/to-regex-range/-/to-regex-range-5.0.1.tgz", { "dependencies": { "is-number": "^7.0.0" } }, "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ=="],
 
