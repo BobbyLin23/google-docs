@@ -15,6 +15,7 @@ import Underline from '@tiptap/extension-underline'
 import StarterKit from '@tiptap/starter-kit'
 import { Editor, EditorContent } from '@tiptap/vue-3'
 import ImageResize from 'tiptap-extension-resize-image'
+import { FontSizeExtension } from '~/extensions/font-size'
 
 const editorStore = useEditorStore()
 const { setEditor } = editorStore
@@ -84,6 +85,7 @@ onMounted(() => {
       TextAlign.configure({
         types: ['heading', 'paragraph'],
       }),
+      FontSizeExtension,
     ],
   })
   setEditor(newEditor)

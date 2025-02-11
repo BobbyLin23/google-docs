@@ -5,6 +5,8 @@ import { ChevronDownIcon } from 'lucide-vue-next'
 const editorStore = useEditorStore()
 const { editor } = storeToRefs(editorStore)
 
+const open = ref(false)
+
 const headings = [
   {
     label: 'Normal text',
@@ -49,9 +51,9 @@ function getCurrentHeading() {
 </script>
 
 <template>
-  <DropdownMenu>
+  <DropdownMenu :open="open" @update:open="open = $event">
     <DropdownMenuTrigger>
-      <button :class="cn('h-7 min-w-7 shrink-0 flex items-center justify-between rounded-sm hover:bg-neutral-200/80 px-1.5 overflow-hidden')">
+      <button class="h-7 min-w-7 shrink-0 flex items-center justify-between rounded-sm hover:bg-neutral-200/80 px-1.5 overflow-hidden">
         <span class="truncate">
           {{ getCurrentHeading() }}
         </span>
@@ -75,6 +77,7 @@ function getCurrentHeading() {
           else {
             editor?.chain().focus().toggleHeading({ level: value as Level }).run()
           }
+          open = false
         }"
       >
         <span class="text-sm">{{ label }}</span>

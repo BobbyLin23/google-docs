@@ -98,12 +98,14 @@ const sections: {
 </script>
 
 <template>
-  <div class="bg-[#F1F4F9] px-2.5 py-0.5 rounded-[24px] min-h-[40px] flex items-center gap-x-0.5 overflow-x-auto">
+  <div class="bg-[#F1F4F9] px-2.5 py-0.5 rounded-[24px] min-h-[40px] flex items-center gap-x-0.5 overflow-x-auto print:hidden">
     <ToolbarButton v-for="item in sections[0]" :key="item.label" :icon="item.icon" @click="item.onClick" />
     <Separator orientation="vertical" class="bg-neutral-300 h-6" />
     <FontFamilyButton />
     <Separator orientation="vertical" class="bg-neutral-300 h-6" />
+    <HeadingLevelButton />
     <Separator orientation="vertical" class="bg-neutral-300 h-6" />
+    <FontSizeButton />
     <Separator orientation="vertical" class="bg-neutral-300 h-6" />
     <ToolbarButton v-for="item in sections[1]" :key="item.label" :icon="item.icon" @click="item.onClick" />
     <TextColorButton />
