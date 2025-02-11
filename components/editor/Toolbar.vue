@@ -114,6 +114,7 @@ const sections: {
     <LinkButton />
     <ImageButton />
     <AlignButton />
+    <LineHeightButton />
     <ListButton />
     <ToolbarButton v-for="item in sections[2]" :key="item.label" :icon="item.icon" @click="item.onClick" />
   </div>

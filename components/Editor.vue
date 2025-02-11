@@ -16,6 +16,7 @@ import StarterKit from '@tiptap/starter-kit'
 import { Editor, EditorContent } from '@tiptap/vue-3'
 import ImageResize from 'tiptap-extension-resize-image'
 import { FontSizeExtension } from '~/extensions/font-size'
+import { LineHeightExtension } from '~/extensions/line-height'
 
 const editorStore = useEditorStore()
 const { setEditor } = editorStore
@@ -86,6 +87,10 @@ onMounted(() => {
         types: ['heading', 'paragraph'],
       }),
       FontSizeExtension,
+      LineHeightExtension.configure({
+        types: ['heading', 'paragraph'],
+        defaultLineHeight: 'normal',
+      }),
     ],
   })
   setEditor(newEditor)
@@ -99,6 +104,7 @@ onUnmounted(() => {
 
 <template>
   <div class="size-full overflow-x-auto bg-[#F9FBFD] px-4 print:p-0 print:bg-white print:overflow-visible">
+    <Ruler />
     <div class="min-w-max flex justify-center w-[816px] mx-auto py-4 print:py-0 print:w-full print:min-w-0">
       <EditorContent :editor="editor!" />
     </div>

@@ -20,9 +20,9 @@
 - [x] Font family & heading tools
 - [x] Color tools (text & highlight)
 - [x] Link and image tools
-- [ ] Align and list tools
-- [ ] Font size tool
-- [ ] Line height tool
+- [x] Align and list tools
+- [x] Font size tool
+- [x] Line height tool
 - [ ] Margin ruler
 - [ ] Navigation bar
 - [ ] Search input
@@ -35,13 +35,5 @@
 - [ ] Organizations feature
 - [ ] Collaboration setup
 
-## Description
-
-### Project Setup
-1. Add ESLint Config
-2. Add Tailwind CSS
-3. Add Shadcn Nuxt
-
-### Add Tiptap Editor
-1. Add doc page
-2. Add Tiptap to Nuxt
+## Issues
+1. Font Size tool does not work.
