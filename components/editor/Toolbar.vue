@@ -109,6 +109,8 @@ const sections: {
     <TextColorButton />
     <HighlightColorButton />
     <Separator orientation="vertical" class="bg-neutral-300 h-6" />
+    <LinkButton />
+    <ImageButton />
     <ToolbarButton v-for="item in sections[2]" :key="item.label" :icon="item.icon" @click="item.onClick" />
   </div>
 </template>
