@@ -17,9 +17,9 @@
 - [x] Add Tiptap extensions
 - [x] Editor store
 - [x] Editor tools
-- [ ] Font family & heading tools
-- [ ] Color tools (text & highlight)
-- [ ] Link and image tools
+- [x] Font family & heading tools
+- [x] Color tools (text & highlight)
+- [x] Link and image tools
 - [ ] Align and list tools
 - [ ] Font size tool
 - [ ] Line height tool
