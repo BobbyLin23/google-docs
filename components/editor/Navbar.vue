@@ -28,7 +28,7 @@ function insertTable({ rows, cols }: {
   editor?.value?.chain().focus().insertTable({ rows, cols }).run()
 }
 
-function onDownload (blob: Blob, filename: string) {
+function onDownload(blob: Blob, filename: string) {
   const url = URL.createObjectURL(blob)
   const a = document.createElement('a')
   a.href = url
@@ -37,32 +37,35 @@ function onDownload (blob: Blob, filename: string) {
   URL.revokeObjectURL(url)
 }
 
-function onSaveJson () {
-  if (!editor.value) return
+function onSaveJson() {
+  if (!editor.value)
+    return
 
   const content = editor.value.getJSON()
   const blob = new Blob([JSON.stringify(content)], {
-    type: 'application/json'
+    type: 'application/json',
   })
   onDownload(blob, 'document.json')
 }
 
 function onSaveHTML() {
-  if (!editor.value) return
+  if (!editor.value)
+    return
 
   const content = editor.value.getHTML()
   const blob = new Blob([content], {
-    type: 'text/html'
+    type: 'text/html',
   })
   onDownload(blob, 'document.html')
 }
 
-function onSaveText () {
-  if (!editor.value) return
+function onSaveText() {
+  if (!editor.value)
+    return
 
   const content = editor.value.getText()
   const blob = new Blob([content], {
-    type: 'text/plain'
+    type: 'text/plain',
   })
   onDownload(blob, 'document.txt')
 }

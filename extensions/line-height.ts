@@ -81,7 +81,7 @@ export const LineHeightExtension = Extension.create({
         }
 
         return true
-      }
+      },
     }
   },
 })

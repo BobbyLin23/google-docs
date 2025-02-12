@@ -8,12 +8,7 @@
       <HomeNavbar />
     </div>
     <div class="mt-16">
-      Doc
-      <NuxtLink href="/documents/a">
-        <Button>
-          Started
-        </Button>
-      </NuxtLink>
+      <TemplateGallery />
     </div>
   </div>
 </template>
