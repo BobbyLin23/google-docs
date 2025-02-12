@@ -14,8 +14,8 @@ defineEmits(['mouseDown', 'doubleClick'])
   <div
     class="absolute top-0 w-4 h-full cursor-ew-resize z-[5] group -ml-2"
     :style="{ [isLeft ? 'left' : 'right']: `${position}px` }"
-    @mousedown="() => $emit('mouseDown')"
-    @dblclick="() => $emit('doubleClick')"
+    @mousedown="$emit('mouseDown')"
+    @dblclick="$emit('doubleClick')"
   >
     <ChevronDownIcon class="absolute left-1/2 size-32 top-0 h-full fill-blue-500 transform -translate-x-1/2" />
     <div

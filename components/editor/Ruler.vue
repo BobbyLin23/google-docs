@@ -27,8 +27,8 @@ function handleMouseMove(e: MouseEvent) {
       }
       else if (isDraggingRight.value) {
         const maxRightPosition = PAGE_WIDTH - (leftMargin.value + MINIMUM_SPACE)
-        const newRightPosition = Math.min(maxRightPosition, rawPosition)
-        const constrainedRightPosition = Math.max(maxRightPosition, newRightPosition)
+        const newRightPosition = Math.max(PAGE_WIDTH - rawPosition, 0)
+        const constrainedRightPosition = Math.min(maxRightPosition, newRightPosition)
         rightMargin.value = constrainedRightPosition
       }
     }

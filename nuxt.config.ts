@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@pinia/nuxt',
     '@nuxt/image',
-    '@nuxt/fonts'
+    '@nuxt/fonts',
+    '@vueuse/nuxt',
   ],
   shadcn: {
     prefix: '',
