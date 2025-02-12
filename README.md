@@ -23,8 +23,8 @@
 - [x] Align and list tools
 - [x] Font size tool
 - [x] Line height tool
-- [ ] Margin ruler
-- [ ] Navigation bar
+- [x] Margin ruler
+- [x] Navigation bar
 - [ ] Search input
 - [ ] Template gallery
 - [ ] DB Setup
@@ -37,3 +37,4 @@
 
 ## Issues
 1. Font Size tool does not work.
+2. Get Nuqs replacement for Vue.
