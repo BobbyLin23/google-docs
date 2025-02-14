@@ -36,5 +36,3 @@
 - [ ] Collaboration setup
 
 ## Issues
-1. Font Size tool does not work.
-2. Get Nuqs replacement for Vue.

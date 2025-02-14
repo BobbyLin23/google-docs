@@ -1,7 +1,27 @@
 <script lang="ts" setup>
+import { useMutation } from '@tanstack/vue-query'
 import { templates } from '~/constants/templates'
 
-const isCreating = ref(false)
+const router = useRouter()
+const { userId } = useAuth()
+
+const { mutate, isPending: isCreating } = useMutation({
+  mutationFn: (data: InsertDocument) => $fetch<SelectDocument>('/api/documents', {
+    method: 'POST',
+    body: JSON.stringify(data),
+  }),
+  onSuccess: (data) => {
+    router.push(`/documents/${data.id}`)
+  },
+})
+
+function onTemplateClick(title: string, initialContent: string) {
+  mutate({
+    title,
+    initialContent,
+    ownerId: userId.value!,
+  })
+}
 </script>
 
 <template>
@@ -26,7 +46,7 @@ const isCreating = ref(false)
                   backgroundRepeat: 'no-repeat',
                 }"
                 class="size-full hover:border-blue-500 rounded-sm border hover:bg-blue-50 transition flex flex-col items-center justify-center gap-y-4 bg-white"
-                @click="() => {}"
+                @click="() => onTemplateClick(template.label, '')"
               />
               <p class="text-sm font-medium truncate">
                 {{ template.label }}

@@ -9,6 +9,7 @@ export default defineNuxtConfig({
     '@nuxt/image',
     '@nuxt/fonts',
     '@vueuse/nuxt',
+    '@clerk/nuxt',
   ],
   shadcn: {
     prefix: '',
@@ -31,4 +32,7 @@ export default defineNuxtConfig({
       pathPrefix: false,
     },
   ],
+  clerk: {
+    skipServerMiddleware: true,
+  },
 })

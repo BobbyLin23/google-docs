@@ -13,6 +13,6 @@
       </h3>
     </div>
     <SearchInput />
-    <div />
+    <UserButton />
   </nav>
 </template>
