@@ -40,7 +40,7 @@ export default defineEventHandler(async (event) => {
     }
   }
   catch (error) {
-    console.error('[Documents API Error]:', error)
+    console.error('[Documents Get API Error]:', error)
 
     throw createError({
       statusCode: 500,

@@ -16,3 +16,4 @@ export const documentsTable = pgTable('documents', {
 
 export type InsertDocument = typeof documentsTable.$inferInsert
 export type SelectDocument = typeof documentsTable.$inferSelect
+export type UpdateDocument = Partial<typeof documentsTable.$inferInsert>

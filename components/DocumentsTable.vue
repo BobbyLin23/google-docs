@@ -23,10 +23,10 @@ defineProps<{
           <TableHead>
             &nbsp;
           </TableHead>
-          <TableHead class="hidden md:flex">
+          <TableHead class="hidden md:table-cell">
             Shared
           </TableHead>
-          <TableHead class="hidden md:flex">
+          <TableHead class="hidden md:table-cell">
             Created At
           </TableHead>
         </TableRow>
@@ -42,5 +42,10 @@ defineProps<{
         <DocumentRow v-for="document in documents" :key="document.id" :document="document" />
       </TableBody>
     </Table>
+    <div class="flex items-center justify-center">
+      <Button variant="ghost" size="sm" :disabled="false" @click="() => loadMore?.(5)">
+        Load more
+      </Button>
+    </div>
   </div>
 </template>

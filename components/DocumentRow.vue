@@ -1,14 +1,24 @@
 <script lang="ts" setup>
 import { format } from 'date-fns'
-import { Building2Icon, CircleUserIcon, FileIcon, MoreVerticalIcon } from 'lucide-vue-next'
+import { Building2Icon, CircleUserIcon, FileIcon } from 'lucide-vue-next'
 
 defineProps<{
   document: SelectDocument
 }>()
+
+const router = useRouter()
+
+function onNewTabClick(id: string) {
+  window.open(`/documents/${id}`, '_blank')
+}
+
+function onRowClick(id: string) {
+  router.push(`/documents/${id}`)
+}
 </script>
 
 <template>
-  <TableRow class="cursor-pointer">
+  <TableRow class="cursor-pointer" @click="() => onRowClick(document.id)">
     <TableCell class="w-[50px]">
       <FileIcon class="size-6 fill-blue-500" />
     </TableCell>
@@ -24,9 +34,11 @@ defineProps<{
       {{ format(new Date(document.createdAt), 'MMM dd, yyyy') }}
     </TableCell>
     <TableCell class="flex justify-end">
-      <Button variant="ghost" size="icon" class="rounded-full">
-        <MoreVerticalIcon class="size-4" />
-      </Button>
+      <DocumentMenu
+        :document-id="document.id"
+        :title="document.title"
+        @on-new-tap="onNewTabClick(document.id)"
+      />
     </TableCell>
   </TableRow>
 </template>
