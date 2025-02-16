@@ -13,6 +13,14 @@
       </h3>
     </div>
     <SearchInput />
-    <UserButton />
+    <div class="flex gap-3 items-center">
+      <OrganizationSwitcher
+        after-create-organization-url="/"
+        after-leave-organization-url="/"
+        after-select-organization-url="/"
+        after-select-personal-url="/"
+      />
+      <UserButton />
+    </div>
   </nav>
 </template>

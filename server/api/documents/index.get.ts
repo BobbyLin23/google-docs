@@ -1,9 +1,11 @@
+import { clerkClient } from '@clerk/nuxt/server'
 import { eq } from 'drizzle-orm'
 import { documentsTable } from '~/utils/schema'
 
 interface QueryParams {
   page?: string | number
   pageSize?: string | number
+  search?: string
 }
 
 export default defineEventHandler(async (event) => {

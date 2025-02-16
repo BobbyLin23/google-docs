@@ -25,8 +25,8 @@
 - [x] Line height tool
 - [x] Margin ruler
 - [x] Navigation bar
-- [ ] Search input
-- [ ] Template gallery
+- [x] Search input
+- [x] Template gallery
 - [ ] DB Setup
 - [ ] Auth
 - [ ] Create and list documents
