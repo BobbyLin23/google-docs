@@ -1,5 +1,6 @@
-import { clerkClient } from '@clerk/nuxt/server'
-import { eq } from 'drizzle-orm'
+import type { SQL } from 'drizzle-orm'
+import { and, eq, ilike } from 'drizzle-orm'
+
 import { documentsTable } from '~/utils/schema'
 
 interface QueryParams {
@@ -20,6 +21,13 @@ export default defineEventHandler(async (event) => {
       })
     }
 
+    const filters: SQL[] = []
+    filters.push(eq(documentsTable.ownerId, userId))
+
+    if (query.search) {
+      filters.push(ilike(documentsTable.title, `%${query.search}%`))
+    }
+
     const _page = Math.max(1, Number(query.page) || 1)
     const _pageSize = Math.max(1, Math.min(50, Number(query.pageSize) || 5))
 
@@ -28,7 +36,7 @@ export default defineEventHandler(async (event) => {
     const documents = await db
       .select()
       .from(documentsTable)
-      .where(eq(documentsTable.ownerId, userId))
+      .where(and(...filters))
       .limit(_pageSize)
       .offset(offset)
 

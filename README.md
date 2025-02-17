@@ -9,7 +9,8 @@
 - Pinia
 - Clerk
 - Prisma
-- Neon
+- Neon as PostgreSQL
+- Drizzle ORM
 
 ## Steps
 - [x] Project Setup
@@ -27,12 +28,19 @@
 - [x] Navigation bar
 - [x] Search input
 - [x] Template gallery
-- [ ] DB Setup
-- [ ] Auth
-- [ ] Create and list documents
-- [ ] Update and delete documents
-- [ ] Search documents
+- [x] DB Setup
+- [x] Auth
+- [x] Create and list documents
+- [x] Update and delete documents
+- [x] Search documents
 - [ ] Organizations feature
 - [ ] Collaboration setup
+- [ ] Room permission
+- [ ] Populate user information
+- [ ] Notification feature
+- [ ] Collaborative margin ruler
+- [ ] Document Information
+- [ ] Templates initial content & app optimization
+- [ ] Deployment
 
 ## Issues

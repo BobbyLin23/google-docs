@@ -1,17 +1,17 @@
 <script setup lang="ts">
-
+const { isSignedIn } = useAuth()
 </script>
 
 <template>
-  <SignedIn>
+  <template v-if="isSignedIn">
     <HomeView />
-  </SignedIn>
+  </template>
   <ClerkLoading>
     <FullScreenLoader label="Loading Clerk..." />
   </ClerkLoading>
-  <SignedOut>
+  <template v-if="!isSignedIn">
     <div class="min-h-screen flex items-center justify-center">
       <SignIn />
     </div>
-  </SignedOut>
+  </template>
 </template>
