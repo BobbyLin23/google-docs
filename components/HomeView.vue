@@ -1,21 +1,35 @@
 <script lang="ts" setup>
 import { useQuery } from '@tanstack/vue-query'
 
-const { data: documents, isPending } = useQuery({
+const count = ref(5)
+
+const { value: search } = useSearchParams('search')
+
+const { data: documents, isPending, refetch } = useQuery({
   queryKey: ['documents'],
   queryFn: async () => {
-    const { data, pagination } = await $fetch<{
+    const { data } = await $fetch<{
       data: SelectDocument[]
-      pagination: any
     }>('/api/documents', {
       method: 'GET',
+      params: {
+        count: count.value,
+        search: search.value,
+      },
     })
 
-    return {
-      data,
-      pagination,
-    }
+    return data
   },
+})
+
+function loadMore(val: number) {
+  count.value = val
+  refetch()
+}
+
+watch(search, () => {
+  count.value = 5
+  refetch()
 })
 </script>
 
@@ -26,7 +40,12 @@ const { data: documents, isPending } = useQuery({
     </div>
     <div class="mt-16">
       <TemplateGallery />
-      <DocumentsTable :documents="documents?.data!" :is-loading="isPending" :page="1" />
+      <DocumentsTable
+        :documents="documents ?? []"
+        :is-loading="isPending"
+        :count="count"
+        @load-more="loadMore"
+      />
     </div>
   </div>
 </template>

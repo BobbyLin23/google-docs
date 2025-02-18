@@ -4,9 +4,10 @@ import { LoaderIcon } from 'lucide-vue-next'
 defineProps<{
   isLoading: boolean
   documents: SelectDocument[]
-  loadMore?: (pageSize: number) => void
-  page: number
+  count: number
 }>()
+
+defineEmits(['loadMore'])
 </script>
 
 <template>
@@ -43,7 +44,7 @@ defineProps<{
       </TableBody>
     </Table>
     <div class="flex items-center justify-center">
-      <Button variant="ghost" size="sm" :disabled="false" @click="() => loadMore?.(5)">
+      <Button variant="ghost" size="sm" :disabled="false" @click="$emit('loadMore', count + 5)">
         Load more
       </Button>
     </div>

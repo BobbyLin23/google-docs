@@ -4,8 +4,7 @@ import { and, eq, ilike } from 'drizzle-orm'
 import { documentsTable } from '~/utils/schema'
 
 interface QueryParams {
-  page?: string | number
-  pageSize?: string | number
+  count?: string
   search?: string
 }
 
@@ -28,25 +27,14 @@ export default defineEventHandler(async (event) => {
       filters.push(ilike(documentsTable.title, `%${query.search}%`))
     }
 
-    const _page = Math.max(1, Number(query.page) || 1)
-    const _pageSize = Math.max(1, Math.min(50, Number(query.pageSize) || 5))
-
-    const offset = (_page - 1) * _pageSize
-
     const documents = await db
       .select()
       .from(documentsTable)
       .where(and(...filters))
-      .limit(_pageSize)
-      .offset(offset)
+      .limit(query.count ? Number.parseInt(query.count) : 5)
 
     return {
       data: documents,
-      pagination: {
-        page: _page,
-        pageSize: _pageSize,
-        offset,
-      },
     }
   }
   catch (error) {
