@@ -5,7 +5,7 @@ export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event) as InsertDocument
 
-    const { userId } = event.context.auth
+    const { userId, orgId } = event.context.auth
 
     if (!userId) {
       return createError({
@@ -18,6 +18,7 @@ export default defineEventHandler(async (event) => {
       title: body.title ?? 'Untitled Document',
       ownerId: userId,
       initialContent: body.initialContent,
+      organizationId: orgId,
     }).returning()
 
     return document

@@ -22,6 +22,9 @@ const { mutate, isPending } = useMutation({
       queryKey: ['documents'],
     })
   },
+  onError: (error) => {
+    toast.error(error.message)
+  },
 })
 </script>
 

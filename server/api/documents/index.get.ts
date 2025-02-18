@@ -12,7 +12,7 @@ export default defineEventHandler(async (event) => {
   try {
     const query = getQuery(event) as QueryParams
 
-    const { userId } = event.context.auth
+    const { userId, orgId } = event.context.auth
     if (!userId) {
       throw createError({
         statusCode: 401,
@@ -25,6 +25,10 @@ export default defineEventHandler(async (event) => {
 
     if (query.search) {
       filters.push(ilike(documentsTable.title, `%${query.search}%`))
+    }
+
+    if (orgId) {
+      filters.push(eq(documentsTable.organizationId, orgId))
     }
 
     const documents = await db

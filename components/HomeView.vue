@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 import { useQuery } from '@tanstack/vue-query'
+import { toast } from 'vue-sonner'
 
 const count = ref(5)
 
 const { value: search } = useSearchParams('search')
 
-const { data: documents, isPending, refetch } = useQuery({
+const { data: documents, isPending, refetch, error } = useQuery({
   queryKey: ['documents'],
   queryFn: async () => {
     const { data } = await $fetch<{
@@ -30,6 +31,12 @@ function loadMore(val: number) {
 watch(search, () => {
   count.value = 5
   refetch()
+})
+
+watch(error, () => {
+  if (error.value) {
+    toast.error(error.value.message)
+  }
 })
 </script>
 

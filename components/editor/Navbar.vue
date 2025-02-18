@@ -222,6 +222,15 @@ function onPrint() {
           </div>
         </div>
       </div>
+      <div class="flex gap-3 items-center pl-6">
+        <OrganizationSwitcher
+          after-create-organization-url="/"
+          after-leave-organization-url="/"
+          after-select-organization-url="/"
+          after-select-personal-url="/"
+        />
+        <UserButton />
+      </div>
     </nav>
   </ClientOnly>
 </template>

@@ -8,7 +8,7 @@ const deleteDocumentSchema = z.object({
 
 export default defineEventHandler(async (event) => {
   try {
-    const { userId } = event.context.auth
+    const { userId, orgId } = event.context.auth
 
     if (!userId) {
       return createError({
@@ -40,8 +40,9 @@ export default defineEventHandler(async (event) => {
     }
 
     const isOwner = document.ownerId === userId
+    const isOrganizationMember = document.organizationId === orgId
 
-    if (!isOwner) {
+    if (!isOwner && !isOrganizationMember) {
       return createError({
         statusCode: 403,
         statusMessage: 'Forbidden',

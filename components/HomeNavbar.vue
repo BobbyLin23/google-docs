@@ -13,7 +13,7 @@
       </h3>
     </div>
     <SearchInput />
-    <div class="flex gap-3 items-center">
+    <div class="flex gap-3 items-center pl-6">
       <OrganizationSwitcher
         after-create-organization-url="/"
         after-leave-organization-url="/"

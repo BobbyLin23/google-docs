@@ -3,12 +3,12 @@ import { useMutation } from '@tanstack/vue-query'
 import { templates } from '~/constants/templates'
 
 const router = useRouter()
-const { userId } = useAuth()
+const { userId, orgId } = useAuth()
 
 const { mutate, isPending: isCreating } = useMutation({
   mutationFn: (data: InsertDocument) => $fetch<SelectDocument>('/api/documents', {
     method: 'POST',
-    body: JSON.stringify(data),
+    body: data,
   }),
   onSuccess: (data) => {
     router.push(`/documents/${data.id}`)
@@ -20,6 +20,7 @@ function onTemplateClick(title: string, initialContent: string) {
     title,
     initialContent,
     ownerId: userId.value!,
+    organizationId: orgId.value,
   })
 }
 </script>

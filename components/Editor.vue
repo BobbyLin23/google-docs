@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { createClient } from '@liveblocks/client'
+import { getYjsProviderForRoom } from '@liveblocks/yjs'
+import Collaboration from '@tiptap/extension-collaboration'
+import CollaborationCursor from '@tiptap/extension-collaboration-cursor'
 import { Color } from '@tiptap/extension-color'
 import FontFamily from '@tiptap/extension-font-family'
 import Highlight from '@tiptap/extension-highlight'
@@ -21,6 +25,21 @@ import { LineHeightExtension } from '~/extensions/line-height'
 const editorStore = useEditorStore()
 const { setEditor } = editorStore
 const { editor } = storeToRefs(editorStore)
+
+const config = useRuntimeConfig()
+
+const leave = ref<(() => void) | null>(null)
+
+const client = createClient({
+  publicApiKey: config.public.liveBlockPublishableKey,
+})
+
+const info = client.enterRoom('my-room')
+const room = info.room
+leave.value = info.leave
+
+const yProvider = getYjsProviderForRoom(room)
+const yDoc = yProvider.getYDoc()
 
 onMounted(() => {
   const newEditor = new Editor({
@@ -59,7 +78,9 @@ onMounted(() => {
       <p>This is a simple editor build with Tiptap.</p>
     `,
     extensions: [
-      StarterKit,
+      StarterKit.configure({
+        history: false,
+      }),
       TaskItem.configure({
         nested: true,
       }),
@@ -91,12 +112,19 @@ onMounted(() => {
         types: ['heading', 'paragraph'],
         defaultLineHeight: 'normal',
       }),
+      Collaboration.configure({
+        document: yDoc,
+      }),
+      CollaborationCursor.configure({
+        provider: yProvider,
+      }),
     ],
   })
   setEditor(newEditor)
 })
 
 onUnmounted(() => {
+  leave.value?.()
   editor.value?.destroy()
   setEditor(null)
 })

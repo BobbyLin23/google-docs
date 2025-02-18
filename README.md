@@ -11,6 +11,8 @@
 - Prisma
 - Neon as PostgreSQL
 - Drizzle ORM
+- Live Block
+- Yjs
 
 ## Steps
 - [x] Project Setup
@@ -33,8 +35,8 @@
 - [x] Create and list documents
 - [x] Update and delete documents
 - [x] Search documents
-- [ ] Organizations feature
-- [ ] Collaboration setup
+- [x] Organizations feature
+- [x] Collaboration setup
 - [ ] Room permission
 - [ ] Populate user information
 - [ ] Notification feature
