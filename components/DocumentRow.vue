@@ -33,7 +33,7 @@ function onRowClick(id: string) {
     <TableCell class="text-muted-foreground hidden md:table-cell">
       {{ format(new Date(document.createdAt), 'MMM dd, yyyy') }}
     </TableCell>
-    <TableCell class="flex justify-end">
+    <TableCell class="flex justify-end" @click.stop.prevent>
       <DocumentMenu
         :document-id="document.id"
         :title="document.title"

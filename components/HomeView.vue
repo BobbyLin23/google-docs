@@ -8,6 +8,7 @@ const { value: search } = useSearchParams('search')
 
 const { data: documents, isPending, refetch, error } = useQuery({
   queryKey: ['documents'],
+  enabled: false,
   queryFn: async () => {
     const { data } = await $fetch<{
       data: SelectDocument[]
@@ -27,6 +28,10 @@ function loadMore(val: number) {
   count.value = val
   refetch()
 }
+
+onMounted(() => {
+  refetch()
+})
 
 watch(search, () => {
   count.value = 5

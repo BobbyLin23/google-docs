@@ -14,14 +14,14 @@
     "db:studio": "drizzle-kit studio"
   },
   "dependencies": {
-    "@clerk/nuxt": "^1.1.4",
-    "@liveblocks/client": "^2.18.2",
-    "@liveblocks/yjs": "^2.18.2",
+    "@clerk/nuxt": "^1.2.0",
+    "@liveblocks/client": "^2.18.3",
+    "@liveblocks/yjs": "^2.18.3",
     "@neondatabase/serverless": "^0.10.4",
     "@nuxt/fonts": "0.10.3",
     "@nuxt/image": "1.9.0",
     "@pinia/nuxt": "0.10.1",
-    "@tanstack/vue-query": "^5.66.4",
+    "@tanstack/vue-query": "^5.66.9",
     "@tiptap/extension-bullet-list": "^2.11.5",
     "@tiptap/extension-collaboration": "^2.11.5",
     "@tiptap/extension-collaboration-cursor": "^2.11.5",
@@ -53,8 +53,8 @@
     "lucide-vue-next": "^0.475.0",
     "nuxt": "^3.15.4",
     "pinia": "^3.0.1",
-    "radix-vue": "^1.9.15",
-    "shadcn-nuxt": "0.11.3",
+    "radix-vue": "^1.9.16",
+    "shadcn-nuxt": "1.0.1",
     "tailwind-merge": "^3.0.1",
     "tailwindcss-animate": "^1.0.7",
     "tiptap-extension-resize-image": "^1.2.1",
@@ -73,6 +73,6 @@
     "@vueuse/core": "^12.7.0",
     "@vueuse/nuxt": "^12.7.0",
     "drizzle-kit": "^0.30.4",
-    "eslint": "^9.20.1"
+    "eslint": "^9.21.0"
   }
 }
