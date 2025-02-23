@@ -55,7 +55,7 @@
     "pinia": "^3.0.1",
     "radix-vue": "^1.9.16",
     "shadcn-nuxt": "1.0.1",
-    "tailwind-merge": "^3.0.1",
+    "tailwind-merge": "^3.0.2",
     "tailwindcss-animate": "^1.0.7",
     "tiptap-extension-resize-image": "^1.2.1",
     "vue": "latest",
